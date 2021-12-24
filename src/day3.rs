@@ -26,9 +26,9 @@ pub fn part2(input: &str) -> u32 {
     part2_solver(&lines, true) * part2_solver(&lines, false)
 }
 
-fn part2_solver(lines: &Vec<&str>, most: bool) -> u32 {
+fn part2_solver(lines: &[&str], most: bool) -> u32 {
     let mut pos = 0;
-    let mut values = lines.clone();
+    let mut values = lines.to_owned();
     while values.len() > 1 {
         let ones_count = values
             .iter()
